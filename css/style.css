@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Workbench&display=swap');
+/* @font-face {
+    font-family: 'Workbench';
+    src: url("fonts/Workbench/static/Workbench-Regular.ttf");
+} */
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Workbench', sans-serif;
+}
+body{
+    position:relative;
+    display:flex;
+    margin:auto;
+
+    overflow: hidden;
+}
+.startScreen{
+    z-index: 15;
+    position: absolute;
+    width:1000px;
+    height:630px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    align-content: start;
+
+    margin: 0;
+
+    border:5px solid rgb(140, 180, 28);
+    border-radius: 10px;
+
+    background-color: rgba(243, 243, 243, 1);
+}
+.game{
+    font-size: 60px;
+    color:rgb(114, 180, 28);
+    font-family: 'Workbench', sans-serif;
+    margin:0 0 70px;
+}
+input[type="text"]{
+    
+    padding:10px;
+    border:5px solid rgb(140, 180, 28);
+    border-radius: 10px;
+
+    color:rgb(12, 54, 8);
+
+    font-size: 22px;
+}
+input[type="text"]::placeholder{
+    color: rgb(186, 248, 87);
+}
+input[type="text"]:focus{
+    outline-color: rgb(235, 84, 73);
+}
+input[type="submit"]{
+    padding:10px;
+    border:5px solid rgb(140, 180, 28);
+    border-radius: 10px;
+
+    color:rgb(230, 36, 36);
+    background-color: rgb(248, 233, 217);
+
+    font-size: 22px;
+}
+input[type="submit"]:focus{
+    outline-color: rgb(235, 84, 73);
+}
+.main_box{
+    position: relative;
+    width:1000px;
+    height:600px;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+
+    border:1px solid rgb(243, 243, 243);
+    border-radius: 10px;
+
+    background-color: rgb(140, 180, 28);
+}
+
+.ball{
+    z-index: 12;
+    position:absolute;
+    top:500px;
+    left:475px;
+
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+
+    background-color: rgb(230, 36, 36);
+    border:2px solid white;
+}
+.indicator1,
+.indicator2,
+.indicator3{
+    z-index: 9;
+    position:absolute;
+    left:0;
+
+}
+.plate{
+    position:absolute;
+    top:550px;
+    left:425px;
+
+    width:150px;
+    height:20px;
+
+    background-color: rgb(250, 252, 243);
+
+    border-radius: 10px;
+}
+.brick{
+    
+    background-color: rgb(245, 250, 224);
+    width:70px;
+    height:40px;
+    display:inline-block;
+    
+    position:absolute;
+    border:5px solid rgb(116, 153, 29);
+    border-radius:7px;
+    margin:0;
+    padding:0;
+
+}
+#brick1{
+    top:20px;
+    left:30px;
+}
+#brick2{
+    top:80px;
+    left:30px;
+}
+#brick3{
+    top:140px;
+    left:30px;
+}
+#brick4{
+    top:200px;
+    left:30px;
+}
+#brick5{
+    top:20px;
+    left:140px;
+}
+#brick6{
+    top:80px;
+    left:140px;
+}
+#brick7{
+    top:140px;
+    left:140px;
+}
+/* #brick8{
+    top:200px;
+    left:140px;
+} */
+#brick8{
+    top:20px;
+    left:250px;
+}
+#brick9{
+    top:80px;
+    left:250px;
+}
+#brick10{
+    top:20px;
+    left:360px;
+}
+#brick11{
+    top:20px;
+    right:30px;
+}
+#brick12{
+    top:80px;
+    right:30px;
+}
+#brick13{
+    top:140px;
+    right:30px;
+}
+#brick14{
+    top:200px;
+    right:30px;
+}
+#brick15{
+    top:20px;
+    right:140px;
+}
+#brick16{
+    top:80px;
+    right:140px;
+}
+#brick17{
+    top:140px;
+    right:140px;
+}
+#brick18{
+    top:20px;
+    right:360px;
+}
+#brick19{
+    top:20px;
+    right:250px;
+}
+#brick20{
+    top:80px;
+    right:250px;
+}
+
+
+.heart{
+    position:absolute;
+    left:0px;
+    top:600px;
+    width:40px;
+    height:40px;
+}
+.lifes{
+    position:absolute;
+    top:615px;
+    left:50px;
+
+    font-family: 'Workbench', sans-serif;
+    font-size:20px;
+}
+.actualScr{
+    position:absolute;
+    top:615px;
+    left:130px;
+    font-size: 20px;
+}
+.actualScores{
+    position:absolute;
+    top:615px;
+    left:190px;
+    font-size: 20px;
+}
+.pauseTitle{
+    position:absolute;
+    top:200px;
+    left:350px;
+    
+    font-size: 120px;
+    opacity:0.95;
+    color: rgb(231, 124, 82);
+}
+.pauseTitle::before{
+    content:"PAUSE";
+    position:absolute;
+    top:5px;
+    left:2px;
+    
+    font-size: 120px;
+    opacity:0.75;
+    color: rgb(240, 36, 36);
+}
+.endGameScreen{
+    position: absolute;
+    left:-10000px;
+    z-index: 13;
+    width:1100px;
+    height:680px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    align-content: start;
+
+    margin:20px 0;
+
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.playersList{
+    z-index: 13;
+    position: relative;
+    top:-50px;
+    width:400px;
+    height:550px;
+
+    display:flex;
+    flex-flow: column;
+    align-content:space-evenly;
+
+    border:1px solid rgb(243, 243, 243);
+    border-radius: 10px;
+
+    background-color: rgb(140, 180, 28);
+}
+.winnersNames{
+    font-size: 18px;
+    padding:3px;
+    margin:0 30px;
+    border: 3px solid aliceblue;
+    border-radius: 5px;;
+}
+.winnersNames:nth-child(1){
+    margin-top:20px;
+}
+.redOutline{
+    border:3px solid rgb(230, 44, 44);
+}
+.withoutOutline{
+    border:1px solid transparent;
+}
+.startGameButton{
+    transition:0.5s;
+    margin:0 30px;
+    padding:7px;
+    font-size: 20px;
+
+    border: 3px solid rgb(129, 24, 24);
+    border-radius:5px;
+    background-color: rgb(230, 44, 44);
+
+    color:rgb(247, 214, 214);
+}
+.startGameButton:hover{
+    transform: scale(1.01);
+    color:aliceblue;
+}
+.modeTest{
+    position:absolute;
+    top:550px;
+    left:835px;
+
+    font-size: 30px;
+    color:rgb(255, 30, 30);
+}
+.time{
+    position:absolute;
+    top:615px;
+    left:355px;
+
+    font-size: 20px;
+    color:rgb(255, 30, 30);
+}
+.timer{
+    position:absolute;
+    top:615px;
+    left:405px;
+
+    font-size: 20px;
+    color:rgb(255, 30, 30);
+}
+.nickname{
+    position:absolute;
+    top:615px;
+    right:5px;
+
+    font-size: 20px;
+}
+.terter{
+    position:absolute;
+    top:615px;
+    right:5px;
+
+    font-size: 20px;
+    color:rgb(255, 30, 30);
+}
+p{
+    position:absolute;
+    top:700px;
+    left:20px;
+}
